@@ -8,6 +8,7 @@ export const ProfileHeader = () => {
     <header>
       <img src={Logo} alt=""/>
       <button type="button">Newsfeed</button>
+      <a href="/"> <button type="button">Home</button> </a>
     </header>
   )
 }

@@ -6,20 +6,21 @@ import LoginPage from "./components/LoginPage";
 import ProfilePage from './components/ProfilePage'
 import ItemPage from './components/ItemPage';
 import Newsfeed from './components/Newsfeed';
-import PostForm from './components/PostForm';
-import PostImg from './components/PostImg';
-import UploadImg from './components/UploadImg'
-import UserInfo from './components/UserInfo';
-import MainHeader from './components/MainHeader';
-import InputTag from './components/InputTag';
+// import PostForm from './components/PostForm';
+// import PostImg from './components/PostImg';
+// import UploadImg from './components/UploadImg'
+// import UserInfo from './components/UserInfo';
+// import MainHeader from './components/MainHeader';
+// import InputTag from './components/InputTag';
 // import ItemPageHeader from './components/ItemPageHeader';
 // import Footer from './components/Footer';
 import NavBar from './components/NavBar.js';
-import Test from './components/test.js'
+import Test from './components/test.js';
+import CreatePost from './components/CreatePost.js';
 
 class App extends Component {
 
-componentDidMount() {
+  componentDidMount() {
     // Call our fetch function below once the component mounts
   this.callBackendAPI()
     .then(res => this.setState({ data: res.express }))
@@ -52,18 +53,9 @@ callBackendAPI = async () => {
             <ItemPage/>
           </Route>
           <Route exact path="/create"> 
-            <section className = "App-top">
-              <MainHeader>Create New Post</MainHeader>
-            </section>
-            <section className = "App-left">
-              <PostImg></PostImg>
-              <UploadImg></UploadImg>
-            </section>
-            <section className = "App-right">
-              <UserInfo></UserInfo>
-              <PostForm></PostForm>
-              <InputTag></InputTag>
-            </section>
+            <>
+            <CreatePost />
+            </>
           </Route>
           <Route exact path="/newsfeed">
           <Newsfeed />
@@ -71,7 +63,7 @@ callBackendAPI = async () => {
          
           <Route exact path="/profilepage">
            <>
-           <NavBar/>
+           <NavBar> Profile Page </NavBar>
             <ProfilePage/>
            </>
           </Route>

@@ -67,7 +67,6 @@ fetch('/users/login', {
   body: JSON.stringify(userData)
 })
 .then(res => {
-  res.json()
  if(res.json()){
    window.location = "/profilepage"
  }

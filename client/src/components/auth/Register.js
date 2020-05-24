@@ -24,7 +24,6 @@ const newUser = {
       password2: this.state.password2
     };
 console.log(newUser);
-// fetch('http://localhost:5000/api/users/register', {    (Line27)
 fetch('/users/register', {
   method: 'POST',
   headers: {
